@@ -1,0 +1,38 @@
+.form-control {
+    &:focus {
+        border: 1px solid $main-color !important;
+        box-shadow: none !important;
+    }
+}
+
+.card {
+    border-radius: 0;
+    border: none !important;
+
+    .card-header {
+        background: #fff;
+        margin-left: rem-calc(20);
+        margin-right: rem-calc(20);
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: rem-calc(20);
+        padding-bottom: rem-calc(15);
+    }
+
+    .card-body {
+        padding: 1rem;
+    }
+}
+
+// Reset a tag
+a {
+    color: $main-color;
+    text-decoration: none !important;
+
+    &:hover,
+    &:focus {
+        color: inherit;
+        text-decoration: none;
+        transition: all 0.3s;
+    }
+}

@@ -1,0 +1,45 @@
+// @import "../../../assets/scss/base/index.scss";
+
+//Action Button Groups Component
+.input-component {
+    position: relative;
+
+    &:hover {
+        .content-editable {
+            border: 0.5px dashed rgb(194, 194, 194);
+            padding-right: 2.5rem;
+        }
+        .button-group-action {
+            display: inline-block;
+        }
+    }
+
+    .content-editable {
+        min-height: rem-calc(25);
+        padding: rem-calc(6) 0 rem-calc(6);
+
+        &.input {
+            border: 0.5px dashed rgb(194, 194, 194);
+        }
+    }
+    //buttons group
+    .button-group-action {
+        right: 1rem;
+        width: auto;
+        display: none;
+        margin-right: 0.5rem;
+        @include vertical-align();
+
+        i {
+            font-size: 1.2rem;
+            padding: 0;
+            color: red;
+            cursor: pointer;
+
+            &:first-child {
+                color: #2aa876;
+                margin-right: 0.5rem;
+            }
+        }
+    }
+}

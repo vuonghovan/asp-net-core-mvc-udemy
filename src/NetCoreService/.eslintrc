@@ -1,0 +1,38 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "eslint:recommended"
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jquery": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "rules": {
+    "indent": [
+      "error",
+      4,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "no-console": "off",
+    "no-unused-vars": "off",
+    "no-useless-escape": "off"
+  },
+  /* Define global varriables and skip ESLint checked */
+  "globals": {
+    "_": true,
+    "__t": true,
+    "__strfTime": true,
+    "__getIdOfURL": true,
+    "route": true,
+    "moment": true,
+    "select2": true
+  }
+}

@@ -1,0 +1,27 @@
+/*
+ Ho Van Vuong: vuonghovan@gmail.com
+ * @Date: 2019-08-20 20:38:22
+ * @Last Modified by: vuonghovan@gmail.com
+ * @Last Modified time: 2019-08-28 17:32:46
+*/
+
+/* Mixin: Set vertical-align to element */
+@mixin vertical-align($position: absolute) {
+    position: $position;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+/* The functin will convert px -> rem */
+@function rem-calc($size) {
+    $remSize: $size / $rem;
+    @return #{$remSize}rem;
+}
+
+/* Define the function will set font-size and convert px to rem */
+@mixin fontSize($size) {
+    font-size: $size; //Fallback in px
+    font-size: rem-calc($size);
+}

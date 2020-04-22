@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    //Use strict type checking
+    //This makes it so 'null' and 'undefined' are considered explicit values
+    //It shows type errors where types could not be inferred, among other things
+    "strict": true,
+
+    //Transforms react JSX syntax into React.createElement() calls
+    "jsx": "react",
+
+    //skip type checking .d.ts files, particularly from third party libraries
+    //this can massively speed up compilation time
+    //"skipLibCheck": true,
+
+    //Tell the TypeScript compiler what libraries we expect to exist
+    //In this case, we expect the user's browser to have ES6 support (haha) and a dom
+    //The idea is that we will polyfill anything additional that we use from es6 in the client code
+    "lib": ["es6", "dom"],
+
+    //This causes ES6 modules to be used instead of CommonJS
+    //This is important since it enables webpack to do tree shaking optimizations (dead code removal)
+    //This has nothing to do with the compilation target, which is still ES3 by default
+    "module": "es6",
+
+    //When setting "module": "es6", the typescript compiler defaults to the "classic" module resolution strategy
+    //It is important that we use the "node" module resolution strategy instead
+    "moduleResolution": "node"
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}

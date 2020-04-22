@@ -1,0 +1,41 @@
+.table-bordered {
+    &.no-wrap {
+        white-space: nowrap;
+    }
+
+    tr {
+        line-height: rem-calc(25);
+    }
+
+    thead {
+        th {
+            color: $main-color;
+            vertical-align: middle;
+            border-bottom: 0;
+            font-weight: 600;
+            padding: rem-calc(10);
+
+            &.flag-icon {
+                text-align: center;
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            td {
+                padding: rem-calc(10);
+
+                &.flag-icon {
+                    text-align: center;
+                }
+            }
+
+            &:hover,
+            &.active {
+                background-color: $color-gray-selected;
+                // cursor: pointer;
+            }
+        }
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "AZURE_BLOB": {
+        "ACCESS_KEY": "",
+        "CONNECTION_STRING": "",
+        "CONTAINER_NAME": "",
+        "IS_ENABLE": ""
+    }
+}

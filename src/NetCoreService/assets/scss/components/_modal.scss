@@ -1,0 +1,135 @@
+.modal-dialog {
+    .modal-header,
+    .modal-body {
+        padding: rem-calc(24) !important;
+    }
+
+    .modal-header {
+        h3,
+        h4,
+        h5 {
+            margin-bottom: 0 !important;
+            margin-top: 0 !important;
+        }
+    }
+}
+
+#modal-gallery {
+    .modal-dialog {
+        max-width: 100% !important;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        height: 100%;
+        margin-top: 0;
+    }
+
+    .close {
+        color: #fff;
+        font-size: rem-calc(45);
+        opacity: 1;
+        float: right;
+        padding: 0;
+        margin: 0;
+    }
+
+    img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .modal-header {
+        height: rem-calc(65);
+        color: #fff;
+        background: #478fe3;
+        padding: rem-calc(15) !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+
+        &-tab {
+            margin: auto;
+        }
+        // Reset style
+        p {
+            margin: 0;
+        }
+    }
+
+    .hidden {
+        visibility: hidden;
+    }
+
+    .modal-body {
+        height: 100vh;
+        padding-top: rem-calc(75) !important;
+        padding-bottom: rem-calc(140) !important;
+        // Reset style
+        .slick-slide {
+            outline: 0 !important;
+        }
+
+        .slider-for {
+            width: auto;
+            height: 100%;
+            text-align: center;
+            text-align: -webkit-center;
+
+            .slick-list,
+            .slick-track {
+                height: 100%;
+            }
+
+            img {
+                max-width: 100%;
+                max-height: 100%;
+            }
+        }
+    }
+
+    .gallery-footer {
+        height: rem-calc(120);
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        margin: rem-calc(10) 0 rem-calc(10);
+        // Reset style
+        .slick-track {
+            transform: none !important;
+            width: 100%;
+        }
+
+        .slick-slide {
+            padding: 0 3px;
+            min-width: 100px !important;
+            width: auto !important;
+            height: 100px !important;
+            max-width: 100px !important;
+            text-align: center;
+            text-align: -webkit-center;
+
+            &.slick-current,
+            &:focus {
+                border: 3px solid #478fe3;
+                outline: 0 !important;
+            }
+        }
+    }
+
+    .slick-prev,
+    .slick-next {
+        color: #929191;
+        content: "";
+        margin: rem-calc(25);
+
+        .fa-chevron-left,
+        .fa-chevron-right {
+            font-size: rem-calc(40);
+        }
+    }
+}

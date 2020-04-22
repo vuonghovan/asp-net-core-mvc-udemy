@@ -1,0 +1,30 @@
+.pagination {
+    text-align: center;
+    color: $main-color;
+    margin: 0;
+    padding: 0;
+    margin-left: rem-calc(20);
+
+    .page-item {
+        min-width: rem-calc(40);
+        cursor: pointer;
+
+        .page-link {
+            display: block;
+            padding: rem-calc(7) rem-calc(9) rem-calc(8);
+            font-size: rem-calc(16);
+        }
+
+        &:not(.disabled) {
+            &.active,
+            &:hover {
+                .page-link {
+                    color: #fff;
+                    font-size: 1rem;
+                    border: 1px solid $active-color;
+                    background-color: $active-color;
+                }
+            }
+        }
+    }
+}

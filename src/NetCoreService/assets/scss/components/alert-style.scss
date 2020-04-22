@@ -1,0 +1,45 @@
+.alert {
+    width: 100%;
+    animation: fadeIn ease 5s;
+    animation-name: alert-message;
+    animation-duration: 450ms;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+
+    &.alert-dialog {
+        width: 94%;
+        z-index: 99;
+        top: 8%;
+        left: 3%;
+        position: fixed;
+
+        @include media-breakpoint-up(lg) {
+            width: 30%;
+            top: 8%;
+            left: 69%;
+            position: fixed;
+        }
+    }
+}
+//Define animation and effect
+@keyframes alert-message {
+    0% {
+        opacity: 0;
+        transform: scale(0.3) translate3d(0, 0, 0);
+    }
+
+    50% {
+        opacity: 0.9;
+        transform: scale(1.1);
+    }
+
+    80% {
+        opacity: 1;
+        transform: scale(0.89);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translate3d(0, 0, 0);
+    }
+}

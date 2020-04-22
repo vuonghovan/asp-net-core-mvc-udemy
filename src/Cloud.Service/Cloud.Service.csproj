@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="WindowsAzure.Storage" Version="9.3.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Models\Model\Models.csproj" />
+    <ProjectReference Include="..\Resources\Infrastructure\Infrastructure.csproj" />
+    <ProjectReference Include="..\Resources\Utilities\Utilities.csproj" />
+  </ItemGroup>
+
+</Project>

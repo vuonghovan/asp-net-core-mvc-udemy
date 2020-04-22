@@ -1,0 +1,36 @@
+.react-datepicker__input-container {
+    display: block !important;
+}
+
+.react-datepicker-wrapper {
+    display: block !important;
+}
+
+.input-group-icon {
+    position: relative;
+    display: block;
+    width: auto;
+
+    .datePicker {
+        height: 38px;
+        border: 1px solid #ced4da;
+        padding: 0 20px;
+        border-radius: 5px;
+        width: 100%;
+        margin: 0;
+    }
+
+    label {
+        position: absolute;
+        font-size: 18px;
+        color: #999;
+        right: 18px;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+}

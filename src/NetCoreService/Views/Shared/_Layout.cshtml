@@ -1,0 +1,47 @@
+﻿@inject Microsoft.AspNetCore.Hosting.IWebHostEnvironment hostingEnv
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+
+    @* Import StyleSheet  *@
+    <link type="text/css" rel="stylesheet" href="~/lib/fontawesome-5/css/fontawesome.min.css" asp-append-version="true" />
+
+    @if (hostingEnv.EnvironmentName == "Development")
+    {
+        <link type="text/css" rel="stylesheet" href="~/assets/css-dev/style.css" asp-append-version="true" />
+    }
+    else
+    {
+        <link type="text/css" rel="stylesheet" href="~/assets/css/style.css" asp-append-version="true" />
+    }
+
+</head>
+<body>
+
+    @RenderBody()
+
+
+    @* Import JS Files *@
+    @if (hostingEnv.EnvironmentName == "Development")
+    {
+        <script src="~/assets/js-dev/app.bundle.js" asp-append-version="true"></script>
+        <script src="~/assets/js-dev/style.bundle.js" asp-append-version="true"></script>
+        <script src="~/assets/js-dev/vendor.bundle.js" asp-append-version="true"></script>
+    }
+    else
+    {
+        <script src="~/assets/js/app.bundle.js" asp-append-version="true"></script>
+        <script src="~/assets/js/style.bundle.js" asp-append-version="true"></script>
+        <script src="~/assets/js/vendor.bundle.js" asp-append-version="true"></script>
+    }
+
+    <script src="~/lib/fontawesome-5/js/fontawesome.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

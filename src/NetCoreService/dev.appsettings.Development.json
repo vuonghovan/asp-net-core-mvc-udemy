@@ -1,0 +1,27 @@
+{
+    "Logging": {
+        "LogLevel": {
+            "Default": "Debug",
+            "System": "Information",
+            "Microsoft": "Information"
+        }
+    },
+    "Email": {
+        "MailServerName": "",
+        "MailServerAddress": "",
+        "MailServerDomain": "smtp.gmail.com",
+        "MailServerPort": "587",
+        "MailServePassword": "",
+        "MailToDebug": "",
+        "IsEnable": false
+    },
+    "ConnectionStrings": {
+        "UseSqlServer": "Data Source=test;Initial Catalog=test;Integrated Security=True;",
+        "UseMySql": "server=127.0.0.1;port=3306;database=test;user=test;password=test;CharSet=utf8;",
+        "UserProvider": "UseMySql"
+    },
+    "GoogleLogin": {
+        "ClientId": "",
+        "ClientSecret": ""
+    }
+}

@@ -1,0 +1,20 @@
+/*
+ Ho Van Vuong: vuonghovan@gmail.com
+ * @Date: 2019-08-29 09:36:40
+ * @Last Modified by: vuonghovan@gmail.com
+ * @Last Modified time: 2019-08-29 09:37:09
+*/
+
+/* The style of error on input control */
+.error-message-form {
+    padding: rem-calc(5) 0 0;
+    align-items: flex-start;
+    color: #d93025;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    font-size: rem-calc(14);
+    line-height: normal;
+    margin-top: rem-calc(2);
+    position: relative;
+}

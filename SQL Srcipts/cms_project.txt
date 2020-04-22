@@ -1,0 +1,85 @@
+CREATE SCHEMA `cms_project` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ;
+
+CREATE TABLE `cms_project`.aspnetusers (
+	Id bigint NOT NULL AUTO_INCREMENT,
+	FirstName varchar(50) not null,
+	LastName varchar(50) not null,
+	UserName varchar(100),
+	NormalizedUserName varchar(100),
+	Email varchar(100) not null,
+	NormalizedEmail varchar(100),
+	EmailConfirmed bit not null,
+	PasswordHash text not null,
+	SecurityStamp text not null,
+	ConcurrencyStamp text,
+	PhoneNumber varchar(100),
+	PhoneNumberConfirmed bit not null,
+	TwoFactorEnabled bit not null,
+	is_admin tinyint not null,
+	is_disable tinyint not null,
+	LockoutEnd datetime,
+	LockoutEnabled bit not null,
+	AccessFailedCount bit not null,
+	LastLoginDate datetime,
+	LastLogoutDate datetime,
+	PRIMARY KEY(Id)
+);
+
+ALTER TABLE `cms_project`.`aspnetusers` 
+CHANGE COLUMN `UserName` `UserName` VARCHAR(100) NOT NULL ,
+CHANGE COLUMN `NormalizedUserName` `NormalizedUserName` VARCHAR(100) NOT NULL ,
+CHANGE COLUMN `Email` `Email` VARCHAR(100) NULL ,
+ADD UNIQUE INDEX `UserName_UNIQUE` (`UserName` ASC) VISIBLE,
+ADD UNIQUE INDEX `NormalizedUserName_UNIQUE` (`NormalizedUserName` ASC) VISIBLE;
+
+CREATE TABLE `cms_project`.aspnetroles (
+	Id bigint NOT NULL AUTO_INCREMENT,
+	Name varchar(256) not null,
+	NormalizedName LONGTEXT not null,
+	ConcurrencyStamp LONGTEXT,
+    PRIMARY KEY(Id)
+);
+
+CREATE TABLE `cms_project`.aspnetroleclaims (
+	Id bigint NOT NULL AUTO_INCREMENT,
+	RoleId varchar(450) not null,
+	ClaimType LONGTEXT,
+	ClaimValue LONGTEXT,
+	PRIMARY KEY(Id)
+);
+
+CREATE TABLE `cms_project`.aspnetuserclaims (
+	Id bigint NOT NULL AUTO_INCREMENT,
+	UserId bigint not null,
+	ClaimType LONGTEXT,
+	ClaimValue LONGTEXT,
+	PRIMARY KEY(Id)
+);
+
+CREATE TABLE `cms_project`.aspnetuserlogins (
+	LoginProvider varchar(255) not null,
+	ProviderKey varchar(255) not null,
+	ProviderDisplayName LONGTEXT,
+	UserId bigint,
+	PRIMARY KEY(LoginProvider, ProviderKey, UserId)
+);
+
+CREATE TABLE `cms_project`.aspnetuserroles (
+	UserId bigint not null,
+	RoleId int not null,
+	PRIMARY KEY(UserId, RoleId)
+);
+
+CREATE TABLE `cms_project`.aspnetusertokens (
+	UserId bigint not null,
+	LoginProvider varchar(450) not null,
+	Name varchar(450) not null,
+	Value LONGTEXT,
+	PRIMARY KEY(UserId, LoginProvider)
+) ;
+
+-- email: admin@gmail.com
+-- password: 123456
+insert into `cms_project`.aspnetusers values(1, "admin", 'admin', 'admin', 'ADMIN', 'admin@gmail.com', 'ADMIN@GMAIL.COM',
+1, 'AQAAAAEAACcQAAAAEL2SgYhd17YQ/GRwk4B9Td78xwbEQPWh5XXMVJ1xoWZ90bRMUxngoWv1ZortuNB2Tw==', 'SFYF4WJKJADVULRXAG7K737CVR642RN2', 
+'04d15226-d8f9-4974-bd91-811c5a90a7d0', null, 0, 0, 1, 0, null, 0, 0, null, null);

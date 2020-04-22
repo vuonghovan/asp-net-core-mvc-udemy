@@ -33,9 +33,6 @@ var config = (env, options) => {
             vendor: path.join(ROOT, '/assets/js/vendor.js'),
             app: path.join(ROOT, '/assets/js/app.js'),
             style: path.join(ROOT, '/assets/scss/app.scss'),
-
-            adminStyle: path.join(ROOT, '/assets/scss/admin/app.scss'),
-            adminJS: path.join(ROOT, '/assets/js/admin/app.js'),
         },
         output: {
             path: ROOT + '/wwwroot/',

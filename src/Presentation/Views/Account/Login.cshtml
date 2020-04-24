@@ -1,0 +1,44 @@
+﻿@model LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container content-container ">
+    <div class="login">
+        <form action="Login" method="post" name="login-form" class="login-form">
+            <div class="white-block">
+                <div class="content-block">
+                    <header class="clearfix">
+                        <div class="pull-left font-weight-bold">Đăng nhập</div>
+                    </header>
+                    <div class="block-inner">
+                        @*<div asp-validation-summary="All" class="text-danger"></div>*@
+                        <div class="form-group">
+                            <label asp-for="Email">
+                                Tài khoản
+                            </label>
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                            <input type="email" asp-for="Email" name="email" class="required form-control " placeholder="Nhập tài khoản ..." />
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Password">
+                                Mật khẩu
+                            </label>
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                            <input type="password" asp-for="Password" name="password" class="required form-control" value="" placeholder="Nhập mật khẩu..." />
+                        </div>
+                        <button type="submit" class="btn btn-dark btn-lg btn-block text-uppercase" id="summit-login">
+                            <span class="btn-title">Đăng nhập</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <a href="#" class="float-left">Tạo tài khoản mới</a>
+                <a href="#" class="float-right">Quên mật khẩu</a>
+            </div>
+            <div class="clearfix"></div>
+        </form>
+    </div>
+</div>
+

@@ -15,8 +15,4 @@
     <ProjectReference Include="..\..\Resources\Infrastructure\Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ViewModels\" />
-  </ItemGroup>
-
 </Project>

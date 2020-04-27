@@ -11,7 +11,7 @@ namespace Presentation.Controllers
 		{
 			_unitOfWork = unitOfWork;
 		}
-		
+		[Route("/")]
 		public IActionResult Index()
 		{
 			return View();

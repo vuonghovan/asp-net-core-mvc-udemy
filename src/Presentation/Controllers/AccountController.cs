@@ -20,12 +20,14 @@ namespace Presentation.Controllers
 		}
 
 		[HttpGet]
+		[Route("[action]")]
 		public IActionResult Login()
 		{
 			return View();
 		}
 		[HttpPost]
 		[ValidateAntiForgeryToken]
+		[Route("[action]")]
 		public async Task<IActionResult> Login(LoginViewModel model)
 		{
 			if (ModelState.IsValid)

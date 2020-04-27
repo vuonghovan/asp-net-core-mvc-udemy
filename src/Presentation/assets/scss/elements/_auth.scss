@@ -1,0 +1,28 @@
+﻿.login {
+    width: 100%;
+    padding: rem-calc(10);
+
+    @include media-breakpoint-up(md) {
+        width: 35%;
+        margin: auto;
+        margin-top: rem-calc(150);
+    }
+
+    .btn-dark {
+        padding: rem-calc(12) rem-calc(12);
+        width: 100%;
+    }
+
+    .form-control {
+        height: rem-calc(40);
+        border: none !important;
+        border-bottom: 1px solid #eee !important;
+        padding-left: 0;
+        border-radius: 0;
+
+        &:focus,
+        &:active {
+            border-bottom: 1px solid #24a0d1 !important;
+        }
+    }
+}

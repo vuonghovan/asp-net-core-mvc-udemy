@@ -1,5 +1,8 @@
+$main-color: #343a40;
+$main-color-hover: #23272b;
+$primary-color: #24a0d1;
+
 $success-color: #5cb85c;
-$main-color-hover: #367fa9;
 $warning-color: #f39c12;
 $urgent-color: #dc3545;
 $menu-background-color: #222d32;
@@ -10,8 +13,6 @@ $table-color-hover: #f0f8ff;
 $background-color1: rgb(229, 238, 247);
 $background-input: #007bff;
 $color-gray-button: #999;
-$main-color: #1e5c8b;
-$main-color-hover: #2c6e99;
 $header-color: #0091cf;
 $active-color: #09a0db;
 $backgroud-body: #f0f0f0;
@@ -24,3 +25,7 @@ $hover-gray: #efefef;
 $link-color: #1790d4;
 $footer-color: #2a343f;
 $footer-color-1: #121922;
+
+.primary-color {
+    color: $primary-color;
+}

@@ -102,9 +102,12 @@ namespace Presentation
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapAreaControllerRoute(name: "admin", areaName:"Admin",pattern: "admin/{controller=Home}/{action=Index}/{id?}");
+
                 endpoints.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
+
         }
     }
 }

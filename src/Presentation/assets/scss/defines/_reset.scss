@@ -1,6 +1,21 @@
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    src: url("~/fonts/Roboto-Regular.ttf?"), url("~/fonts/Roboto-MediumItalic");
+}
+
+html,
+body {
+    font-family: Roboto, sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    background-color: #eee !important;
+}
+
 .form-control {
-    &:focus {
-        border: 1px solid $main-color !important;
+    &:focus,
+    &:active {
         box-shadow: none !important;
     }
 }

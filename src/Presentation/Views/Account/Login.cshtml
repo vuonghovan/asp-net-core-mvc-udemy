@@ -1,0 +1,32 @@
+﻿@model LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<form class="login" action="Login" method="post" name="login-form" style="background-color: #fff;">
+    @Html.AntiForgeryToken()
+    <div class="card">
+        <div class="clearfix card-header">
+            <h4>Đăng nhập</h4>
+        </div>
+        <div class="card-body">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="primary-color" asp-for="Email">Tài khoản</label>
+                <input type="email" asp-for="Email" id="email" class="required form-control " placeholder="Nhập tài khoản ..." />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="primary-color"  asp-for="Password">Mật khẩu</label>
+                <input type="password" asp-for="Password" id="password" class="required form-control" value="" placeholder="Nhập mật khẩu..." />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-dark text-uppercase form-group">Đăng nhập</button>
+            <div>
+                <a href="#" class="float-left">Tạo tài khoản mới</a>
+                <a href="#" class="float-right">Quên mật khẩu</a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</form>

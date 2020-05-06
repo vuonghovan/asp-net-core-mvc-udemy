@@ -1,6 +1,8 @@
 ﻿using Factories.Services;
+using Infrastructure.Emails;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using MimeKit;
 using Models.Identity;
 using Models.ViewModels.Account;
 using Presentation.Cores;
@@ -12,11 +14,14 @@ namespace Presentation.Controllers
 	{
 		private SignInManager<AppUser> _signInManager;
 		private UserManager<AppUser> _userManager;
+		private IEmailService _emailService;
 
-		public AccountController(SignInManager<AppUser> signInManager, UserManager<AppUser> userManager)
+		public AccountController(SignInManager<AppUser> signInManager, UserManager<AppUser> userManager,
+			IEmailService emailService)
 		{
 			_signInManager = signInManager;
 			_userManager = userManager;
+			_emailService = emailService;
 		}
 
 		[HttpGet]
@@ -58,6 +63,22 @@ namespace Presentation.Controllers
 				}
 			}
 			return View(model);
+		}
+		[HttpGet]
+		[Route("[action]")]
+		public IActionResult ForgotPassword()
+		{
+			return View("~/Views/Partials/_ForgotPassword.cshtml");
+		}
+		[HttpPost]
+		[Route("[action]")]
+		public async Task<IActionResult> ForgotPassword(string email)
+		{
+			var bodyBuilder = new BodyBuilder();
+			bodyBuilder.HtmlBody = "<b>This is some html text</b>";
+			bodyBuilder.TextBody = "This is some plain text";
+			await _emailService.SendEmailAsync(email, email, "subject", bodyBuilder);
+			return StatusCode(201, "Success");
 		}
 	}
 }

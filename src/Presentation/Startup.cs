@@ -14,6 +14,7 @@ using Models.Identity;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 using Factories.Services;
+using Infrastructure.Emails;
 
 namespace Presentation
 {
@@ -36,6 +37,8 @@ namespace Presentation
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             // ----Register Logger Service
             services.AddSingleton<ILoggerManager, LoggerManager>();
+            // ----Register ail Service
+            services.AddScoped<IEmailService, EmailService>();
             //-----Register DbConnection
             services.AddDbContext<MyDbContext>(options => options.InitDbContext(Configuration), ServiceLifetime.Transient);
             //----Register DbContextIdentity
@@ -67,6 +70,8 @@ namespace Presentation
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
+            //-----Register Email
+            services.Configure<EmailConfig>(Configuration.GetSection("Email"));
 
             services.AddRazorPages();
             services.AddControllers();

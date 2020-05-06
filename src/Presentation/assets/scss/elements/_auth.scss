@@ -26,3 +26,36 @@
         }
     }
 }
+
+.modal-dialog {
+
+    .btn-dark {
+        padding: rem-calc(12) rem-calc(12);
+        width: 100%;
+    }
+
+    .form-control {
+        height: rem-calc(40);
+        border: none !important;
+        border-bottom: 1px solid #eee !important;
+        padding-left: 0;
+        border-radius: 0;
+
+        &:focus,
+        &:active {
+            border-bottom: 1px solid #24a0d1 !important;
+        }
+    }
+}
+
+.modal-intro-block {
+    padding: 20px;
+    .flex-container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: stretch;
+        align-content: stretch;
+    }
+}

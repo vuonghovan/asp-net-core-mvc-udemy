@@ -8,7 +8,8 @@
     <title>@ViewData["Title"]</title>
 
     @* Import StyleSheet  *@
-    <link type="text/css" rel="stylesheet" href="~/lib/fontawesome-5/css/fontawesome.min.css" asp-append-version="true" />
+    @*<link type="text/css" rel="stylesheet" href="~/lib/fontawesome-5/css/fontawesome.min.css" asp-append-version="true" />*@
+    <link type="text/css" rel="stylesheet" href="~/lib/fontawesome-5/css/all.min.css" asp-append-version="true" />
 
     @if (hostingEnv.EnvironmentName == "Development")
     {
@@ -40,7 +41,8 @@
         <script src="~/assets/js/vendor.bundle.js" asp-append-version="true"></script>
     }
 
-    <script src="~/lib/fontawesome-5/js/fontawesome.min.js"></script>
+    @*<script src="~/lib/fontawesome-5/js/fontawesome.min.js"></script>*@
+    <script src="~/lib/fontawesome-5/js/all.min.js"></script>
     <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
     @RenderSection("Scripts", required: false)

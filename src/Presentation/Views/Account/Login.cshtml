@@ -13,20 +13,46 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label class="primary-color" asp-for="Email">Tài khoản</label>
-                <input type="email" asp-for="Email" id="email" class="required form-control " placeholder="Nhập tài khoản ..." />
+                <input type="email" asp-for="Email" id="email" class="required form-control " placeholder="Nhập Email ..." />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label class="primary-color"  asp-for="Password">Mật khẩu</label>
+                <label class="primary-color" asp-for="Password">Mật khẩu</label>
                 <input type="password" asp-for="Password" id="password" class="required form-control" value="" placeholder="Nhập mật khẩu..." />
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
             <button type="submit" class="btn btn-dark text-uppercase form-group">Đăng nhập</button>
             <div>
                 <a href="#" class="float-left">Tạo tài khoản mới</a>
-                <a href="#" class="float-right">Quên mật khẩu</a>
+                <a href="#" id="forgot-password" class="float-right">Quên mật khẩu</a>
             </div>
             <div class="clearfix"></div>
         </div>
     </div>
 </form>
+@await Html.PartialAsync("_ModalLayout")
+@section Scripts
+{
+    <script>
+    var forgotPasswordBtn = document.getElementById('forgot-password');
+
+    forgotPasswordBtn.addEventListener('click', function () {
+        $("#modalLayout").modal("show");
+    }, false);
+
+    $('#modalLayout').on('show.bs.modal', function (event) {
+        var modal = $(this)
+        $.ajax({
+            url: '/ForgotPassword',
+            method: 'GET',
+        }).done(function (data) {
+            modal.find(".modal-body").html(data);
+        }).fail(function (xhr, status, error) {
+            alert(xhr.responseText);
+        });
+        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+        modal.find('.modal-title').text('Quên mật khẩu')
+    });
+    </script>
+}

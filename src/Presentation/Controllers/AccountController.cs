@@ -30,6 +30,7 @@ namespace Presentation.Controllers
 		{
 			return View();
 		}
+
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		[Route("[action]")]
@@ -64,14 +65,16 @@ namespace Presentation.Controllers
 			}
 			return View(model);
 		}
+
 		[HttpGet]
-		[Route("[action]")]
+		[Route("forgot-password")]
 		public IActionResult ForgotPassword()
 		{
 			return View("~/Views/Partials/_ForgotPassword.cshtml");
 		}
+
 		[HttpPost]
-		[Route("[action]")]
+		[Route("forgot-password")]
 		public async Task<IActionResult> ForgotPassword(string email)
 		{
 			var bodyBuilder = new BodyBuilder();

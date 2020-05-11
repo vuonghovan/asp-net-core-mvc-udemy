@@ -1,4 +1,214 @@
 ﻿@{
     ViewData["Title"] = "Trang chủ";
 }
-<h2>Home Page Admin</h2>
+<div class="page-content-wapper" id="page-content-wapper">
+    <div class="page-content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0 text-dark">Dashboard</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item">
+                            <a href="#">Home</a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 col-6">
+                    <div class="small-box bg-info">
+                        <div class="inner">
+                            <h3>H3</h3>
+                            <p>content</p>
+                        </div>
+                        <div class="icon">
+                            Icon
+                        </div>
+                        <a href="#" class="small-box-footer">
+                            More info
+                            <i class="fas fa-arrow-circle-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <div class="small-box bg-success">
+                        <div class="inner">
+                            <h3>H3</h3>
+                            <p>content</p>
+                        </div>
+                        <div class="icon">
+                            Icon
+                        </div>
+                        <a href="#" class="small-box-footer">
+                            More info
+                            <i class="fas fa-arrow-circle-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <div class="small-box bg-warning">
+                        <div class="inner">
+                            <h3>H3</h3>
+                            <p>content</p>
+                        </div>
+                        <div class="icon">
+                            Icon
+                        </div>
+                        <a href="#" class="small-box-footer">
+                            More info
+                            <i class="fas fa-arrow-circle-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <div class="small-box bg-danger">
+                        <div class="inner">
+                            <h3>H3</h3>
+                            <p>content</p>
+                        </div>
+                        <div class="icon">
+                            Icon
+                        </div>
+                        <a href="#" class="small-box-footer">
+                            More info
+                            <i class="fas fa-arrow-circle-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="card">
+                        <div class="card-header">
+                            Featured
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Special title treatment</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            Featured
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Special title treatment</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            Featured
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Special title treatment</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="card">
+                        <div class="card-header">
+                            Featured
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Special title treatment</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            Featured
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Special title treatment</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            Featured
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Special title treatment</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts
+{
+    <script>
+        document.getElementById("SliderBarBtn").addEventListener("click", toggleNav);
+
+        document.getElementById("sidenav").addEventListener("mouseover", open);
+        document.getElementById("sidenav").addEventListener("mouseout", close);
+
+        function toggleNav() {
+            sidenav  = document.getElementById("sidenav");
+            if (sidenav.offsetWidth == 224) {
+                sidenav.classList.remove("fixed");
+                return close();
+            }
+            sidenav.classList.add("fixed");
+            return open();
+        }
+
+        function open() {
+            document.getElementById("sidenav").style.transition = "300ms";
+            $(".sidenav span").show();
+            $(".fa-caret-down").show();
+            document.getElementById("sidenav").style.width = "16rem";
+            document.getElementById("top-navbar").style.marginLeft = "16rem";
+            document.getElementById("page-content-wapper").style.marginLeft = "16rem";
+            document.getElementById("main-footer").style.marginLeft = "16rem";
+        }
+        function close() {
+            if (!($("#sidenav").hasClass("fixed"))) {
+                document.getElementById("sidenav").style.transition = "300ms";
+                $(".sidenav span").hide();
+                $(".fa-caret-down").hide();
+                document.getElementById("sidenav").style.width = "5rem";
+                document.getElementById("top-navbar").style.marginLeft = "5rem";
+                document.getElementById("page-content-wapper").style.marginLeft = "5rem";
+                document.getElementById("main-footer").style.marginLeft = "5rem";
+            }
+        }
+
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        }
+
+        $(".dropdown-container a").on("click", function () {
+            $(".dropdown-container a").removeClass("active")
+            $(this).addClass("active")
+        });
+
+    </script>
+}

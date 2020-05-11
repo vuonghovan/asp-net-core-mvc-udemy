@@ -1,0 +1,149 @@
+﻿$sidenav-width : 16rem;
+
+.top-navbar {
+    margin-left: $sidenav-width;
+}
+/* Fixed sidenav, full height */
+.sidenav {
+    height: 100%;
+    width: $sidenav-width;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: $menu-background-color;
+    overflow-x: hidden;
+    padding-top: rem-calc(20);
+    box-shadow: 0 rem-calc(14) rem-calc(28) rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .22);
+
+    /* Style the sidenav links */
+    a,
+    .info-user {
+        padding: 6px 8px 6px rem-calc(16);
+        text-decoration: none;
+        font-size: rem-calc(20);
+        color: white;
+        display: block;
+        background: none;
+        width: 100%;
+        text-align: left;
+        cursor: pointer;
+        outline: none;
+    }
+    /* Style dropdown button  */
+    .dropdown-btn {
+        padding: 6px 8px 6px rem-calc(16);
+        text-decoration: none;
+        font-size: rem-calc(20);
+        color: white;
+        display: block;
+        border: none;
+        background: none;
+        width: 100%;
+        text-align: left;
+        cursor: pointer;
+        outline: none;
+    }
+    /* Add an active class to the active dropdown button */
+    .active {
+        background-color: $active-color;
+        color: white;
+    }
+
+    img {
+        width: rem-calc(50);
+        height: rem-calc(50);
+        padding: .5rem;
+    }
+}
+/* On mouse-over */
+.sidenav a:hover {
+    color: $hover-gray;
+}
+
+.dropdown-btn:hover {
+    color: $hover-gray;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+    display: none;
+    background-color: $menu-background-color;
+    padding-left: 8px;
+    animation: fade 1s;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+    float: right;
+    padding-right: 8px;
+}
+
+.page-content-wapper {
+    margin-left: $sidenav-width; /* Same as the width of the sidenav */
+    font-size: rem-calc(20); /* Increased text to enable scrolling */
+    padding: 1px rem-calc(10);
+}
+
+.small-box {
+    border-radius: .25rem;
+    box-shadow: 0 0 1px rgba(0, 0, 0, .125), 0 1px 3px rgba(0, 0, 0, .2);
+    display: block;
+    margin-bottom: rem-calc(20);
+    position: relative;
+
+    .inner {
+        padding: rem-calc(10);
+    }
+
+    .icon {
+        position: absolute;
+        right: rem-calc(15);
+        top: rem-calc(15);
+    }
+
+    .small-box-footer {
+        background: rgba(0, 0, 0, .1);
+        display: block;
+        padding: 3px 0;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        z-index: 10;
+    }
+
+    a {
+        color: black;
+    }
+}
+
+.main-footer {
+    margin-left: $sidenav-width;
+    background-color: white;
+    padding: 1rem;
+    border-top: 1px solid #dee2e6;
+}
+
+.brand-link {
+    border-bottom: 1px solid #4f5962;
+}
+
+.user-panel {
+    position: relative;
+    border-bottom: 1px solid #4f5962;
+
+    img {
+        height: rem-calc(50);
+        width: rem-calc(50);
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

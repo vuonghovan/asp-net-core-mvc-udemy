@@ -49,7 +49,7 @@
 }
 
 .modal-intro-block {
-    padding: 20px;
+    padding: rem-calc(20);
     .flex-container {
         display: flex;
         flex-direction: column;

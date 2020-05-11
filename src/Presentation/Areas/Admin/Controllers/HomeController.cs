@@ -15,7 +15,7 @@ namespace Presentation.Areas.Admin.Controllers
 		{
 			_unitOfWork = unitOfWork;
 		}
-
+		[Route("/admin/")]
 		public IActionResult Index()
 		{
 			return View();

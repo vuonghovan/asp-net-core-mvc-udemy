@@ -39,6 +39,7 @@ namespace Presentation
             services.AddSingleton<ILoggerManager, LoggerManager>();
             // ----Register ail Service
             services.AddScoped<IEmailService, EmailService>();
+            services.AddScoped<ITemplateService, TemplateService>();
             //-----Register DbConnection
             services.AddDbContext<MyDbContext>(options => options.InitDbContext(Configuration), ServiceLifetime.Transient);
             //----Register DbContextIdentity
@@ -64,6 +65,7 @@ namespace Presentation
                 options.Password.RequireLowercase = false;
                 options.Password.RequireNonAlphanumeric = false;
             });
+            services.Configure<DataProtectionTokenProviderOptions>(opt => opt.TokenLifespan = TimeSpan.FromHours(2));
             //-----Register Cookie
             services.Configure<CookiePolicyOptions>(options =>
             {

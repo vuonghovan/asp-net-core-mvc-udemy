@@ -1,4 +1,5 @@
 using System.IO;
+using System.Security.Authentication;
 using System.Threading.Tasks;
 using Infrastructure.Configs;
 using MailKit.Net.Smtp;
@@ -53,11 +54,26 @@ namespace Infrastructure.Emails
             var password = Utilities.CryptographyHelper.DecryptUsingSymmetricAlgorithm(emailConfig.MailServePassword);
             using (var client = new SmtpClient())
             {
-                client.AuthenticationMechanisms.Remove("XOAUTH2");
-                await client.ConnectAsync(emailConfig.MailServerDomain, port, false).ConfigureAwait(false);
-                await client.AuthenticateAsync(emailConfig.MailServerAddress, password).ConfigureAwait(false);
-                await client.SendAsync(email).ConfigureAwait(false);
-                await client.DisconnectAsync(true).ConfigureAwait(false);
+                try
+                {
+                    //https://stackoverflow.com/questions/59026301/sslhandshakeexception-an-error-occurred-while-attempting-to-establish-an-ssl-or
+                    // Allow SSLv3.0 and all versions of TLS
+
+                #if DEBUG
+                    client.CheckCertificateRevocation = false;
+                #endif
+
+                    client.AuthenticationMechanisms.Remove("XOAUTH2");
+                    await client.ConnectAsync(emailConfig.MailServerDomain, port, false).ConfigureAwait(false);
+                    await client.AuthenticateAsync(emailConfig.MailServerAddress, password).ConfigureAwait(false);
+                    await client.SendAsync(email).ConfigureAwait(false);
+                    await client.DisconnectAsync(true).ConfigureAwait(false);
+                }
+                catch (System.Exception ex)
+                {
+
+                    throw ex;
+                }
             }
         }
     }

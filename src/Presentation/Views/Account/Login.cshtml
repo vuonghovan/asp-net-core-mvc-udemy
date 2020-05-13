@@ -43,7 +43,7 @@
     $('#modalLayout').on('show.bs.modal', function (event) {
         var modal = $(this)
         $.ajax({
-            url: '/ForgotPassword',
+            url: '/forgot-password',
             method: 'GET',
         }).done(function (data) {
             modal.find(".modal-body").html(data);
